@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar with Font Awesome and Animations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 0 0 30% 30%;
+            background-color: rgba(2, 2, 2, 0.7);
+            padding: 10px 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .logo img {
+            width: 170px;
+            height: 170px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            padding: 0;
+            margin: 0;
+            margin-top: 10px;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.1em;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            color: #f39c12;
+            transform: scale(1.1);
+        }
+
+        .dot {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .dot div {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+            margin: 5px 0;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .navbar .logo {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                padding: 0;
+            }
+
+            .navbar ul li {
+                margin: 0;
+                text-align: center;
+                width: 100%;
+            }
+
+            .navbar ul li a {
+                display: block;
+                padding: 15px 0;
+                width: 100%;
+            }
+
+            .navbar ul.active {
+                display: flex;
+            }
+
+            .dot {
+                display: flex;
+            }
+        }
+
+        .navbar ul {
+            transition: all 0.3s ease;
+        }
+
+        .navbar ul.active {
+            animation: sheet 1s ease;
+        }
+
+        @keyframes sheet {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fa-bars {
+            font-size: 30px;
+            color: #f4f4f4;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#"><img src="../logo/design.png" alt="Logo"></a>
+            <div class="dot" onclick="samaka()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>Welcome to My Website</h1>
+        <p>This is an example of a responsive navbar with Font Awesome icons, animations, and hover effects!</p>
+    </div>
+
+    <script>
+        function samaka() {
+            const navMenu = document.querySelector('.navbar ul');
+            navMenu.classList.toggle('active');
+        }
+    </script>
+
+</body>
+
+</html>

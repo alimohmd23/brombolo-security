@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./log in page/style.css">
+  <title>5555</title>
+
+</head>
+<body>
+  <div class="container">
+    <img src="./photos/design - for login.png" alt="log in photo">
+    <form id="login-form" class="active">
+      <h2>Welcome</h2>
+      <input type="email" id="login-email" placeholder="Email" required>
+      <input type="password" id="login-password" placeholder="Password" required>
+      <button class="button" type="button" onclick="login()">Login</button>
+      <p class="link" onclick="showForm('signup-form')">Create Account</p>
+      <p class="link" onclick="showForm('forget-form')">Forgot Password?</p>
+    </form>
+
+
+    <form id="signup-form">
+      <h2>Sign up free</h2>
+      <input type="text" id="signup-name" placeholder="Full Name" required>
+      <input type="email" id="signup-email" placeholder="Email" required>
+      <input type="password" id="signup-password" placeholder="Password" required>
+      <button class="button" type="button" onclick="signUp()">Sign Up</button>
+      <p class="link" onclick="showForm('login-form')">Already have an account? Login</p>
+    </form>
+    
+    
+    <form id="forget-form">
+      <h3>forget the password</h3>
+      <input type="email" id="forget-email" placeholder="Enter your Email" required>
+      <button class="button" type="button" onclick="forgetPassword()">Reset Password</button>
+      <p class="link" onclick="showForm('login-form',forsot())" >Back to Login</p>
+    </form>
+  </div>
+  <button id="btn"><a href="./home page/index.html">Next</a></button>
+  <div id="lelo">Account created successfully! <button onclick="jangle()" class="button" id="btn4">back</button></div>
+  <div id="pass"><p>Your password is: </p></div>
+  <script src="./log in page/script.js"></script>
+</body>
+</html>
